@@ -48,6 +48,7 @@ env:
   #
   # For example, to build and deploy extensions, use:
   # OVERRIDE_JOBS: linux-relassert linux-release linux-release-musl windows extensions-build extensions-deploy
+  OVERRIDE_JOBS: osx
   # Add "osx" when running the full extension matrix.
 
 jobs:
@@ -92,7 +93,7 @@ jobs:
     steps:
       - name: Detect runners
         id: runners
-        uses: duckdb/duckdb-ci/detect-runners@main
+        uses: nik9000/duckdb-ci/detect-runners@fork-macos-latest-runner
 
       - name: Resolve DuckDB commit
         id: resolve_duckdb_commit
